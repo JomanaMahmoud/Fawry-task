@@ -2,7 +2,7 @@ package model.product;
 
 public class Product {
     private String name;
-    private double price;
+    private double price; //double is used instead of int so that it demonstrates the correct real-world thinking
     private int quantity;
 
     public Product(String name, double price, int quantity) {

@@ -64,7 +64,7 @@ public class ECommerceService {
             printReceipt(customer, cart, subtotal, shippingCost, totalAmount);
 
         } catch (IllegalStateException e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
