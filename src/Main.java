@@ -24,10 +24,12 @@ public class Main {
         cartForCustomer1.add(biscuits, 1);
 
         // Perform checkout.
+        System.out.println("Customer 1 checkout");
         eCommerceService.checkout(customer1, cartForCustomer1);
 
         // Example: Insufficient Balance
         Customer customer2 = new Customer("Customer 2", 50.0);
+        System.out.println("Customer 2 checkout");
         eCommerceService.checkout(customer2, cartForCustomer1); // Use the same cart
 
     }

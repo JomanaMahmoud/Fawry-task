@@ -77,6 +77,6 @@ public class ECommerceService {
         System.out.println("Subtotal\t" + subtotal);
         System.out.println("Shipping\t" + shippingCost);
         System.out.println("Amount\t\t" + totalAmount);
-        System.out.println("\nCustomer balance after payment: " + customer.getBalance());
+        //System.out.println("\nCustomer balance after payment: " + customer.getBalance());
     }
 }
