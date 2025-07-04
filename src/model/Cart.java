@@ -33,8 +33,6 @@ public class Cart {
             return;
         }
         this.items.put(product, this.items.getOrDefault(product, 0) + quantity);
-        System.out.println("Success: Added " + quantity + " of '" + product.getName() + "' to the cart.");
-
     }
 
     public Map<Product, Integer> getItems(){
