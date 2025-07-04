@@ -16,7 +16,7 @@ public class Cart {
         this.items = new LinkedHashMap<>();
     }
 
-    public void add(Product product, int quantity){
+    public void addProduct(Product product, int quantity){
         if(quantity <= 0){
             System.err.println("Error: quantity must be greater than 0");
             return;
