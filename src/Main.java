@@ -43,7 +43,7 @@ public class Main {
         cartForCustomer3.addProduct(laptop, 1); // Should fail
 
         // Example: Expired Product
-        Product expiredMilk = new FoodProduct("Expired Milk", 20.0, 50, 1000, LocalDate.now().minusDays(1));
+        Product expiredMilk = new FoodProduct("Milk", 20.0, 50, 1000, LocalDate.now().minusDays(1));
         Customer customer4 = new Customer("Customer 4", 100.0);
         Cart cartForCustomer4 = new Cart();
         cartForCustomer4.addProduct(expiredMilk, 1);
