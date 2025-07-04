@@ -4,6 +4,8 @@ import model.ECommerceService;
 import model.product.FoodProduct;
 import model.product.Product;
 import model.product.ElectronicsProduct;
+import model.product.DigitalProduct; // Added for the new test case
+
 import java.time.LocalDate;
 
 public class Main {
@@ -55,5 +57,29 @@ public class Main {
         Cart cartForCustomer5 = new Cart(); // Cart is empty
         System.out.println("\nCustomer 5 checkout (Empty Cart)");
         eCommerceService.checkout(customer5, cartForCustomer5);
+
+        // Example: Checkout with only non-shippable items
+        Product scratchCard = new DigitalProduct("Scratch Card", 10.0, 100);
+        Customer customer6 = new Customer("Customer 6", 100.0);
+        Cart cartForCustomer6 = new Cart();
+        cartForCustomer6.addProduct(scratchCard, 3);
+        System.out.println("\nCustomer 6 checkout (Digital Only - No Shipping)");
+        eCommerceService.checkout(customer6, cartForCustomer6);
+
+        // Example: Customer has the exact balance required
+        Product headphones = new ElectronicsProduct("Headphones", 100.0, 10, 500);
+        // Assuming shipping is 45.0, total is 145.0
+        Customer customer7 = new Customer("Customer 7", 145.0);
+        Cart cartForCustomer7 = new Cart();
+        cartForCustomer7.addProduct(headphones, 1);
+        System.out.println("\nCustomer 7 checkout (Exact Balance)");
+        eCommerceService.checkout(customer7, cartForCustomer7);
+
+        // Example: Adding zero or negative quantity to cart
+        Customer customer8 = new Customer("Customer 8", 500.0);
+        Cart cartForCustomer8 = new Cart();
+        System.out.println("\nCustomer 8 adding to cart (Zero/Negative Quantity)");
+        cartForCustomer8.addProduct(cheese, 0);  // Should print an error
+        cartForCustomer8.addProduct(cheese, -5); // Should print an error
     }
 }
